@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.DynamicalSystemsSingularitiesBilliardsFoundationCanonicalLaneLean.PhaseSpaceStratification
+import HautevilleHouse.DynamicalSystemsSingularitiesBilliardsFoundationCanonicalLaneLean.ReflectionHyperplaneArrangement
+import HautevilleHouse.DynamicalSystemsSingularitiesBilliardsFoundationCanonicalLaneLean.SingularityResolutionBilliardOrbit
+import HautevilleHouse.DynamicalSystemsSingularitiesBilliardsFoundationCanonicalLaneLean.BilliardFlowEquivalence
+
+namespace HautevilleHouse
+namespace DynamicalSystemsSingularitiesBilliardsFoundationCanonicalLaneLean
+
+def ConstrainedBilliardClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_billiard_endgame (A : AdmissibleClass) : ConstrainedBilliardClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end DynamicalSystemsSingularitiesBilliardsFoundationCanonicalLaneLean
+end HautevilleHouse
